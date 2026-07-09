@@ -7,3 +7,6 @@ logging.basicConfig(  # Configuring the logging format -> pyhton uses this struc
 logger = logging.getLogger(
     __name__
 )  # This creates a logger object that will be used when we write a log.
+
+# logger.py finishes execution
+# Python returns to main.py with the logger object available.
