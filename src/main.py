@@ -1,5 +1,7 @@
-from logger import logger
-import weather  # now we have made the weather.py mosule available, but it does not fetch the weather data yet.
+from src.logger import logger
+from src import (
+    weather,
+)  # now we have made the weather.py mosule available, but it does not fetch the weather data yet.
 
 
 def main():

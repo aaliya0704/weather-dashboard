@@ -17,7 +17,7 @@ from requests.exceptions import RequestException
 # When the reques is successfully received by the API server and it sends you the data, after this whatever error occurs is not a request related error.
 
 # Now we tell the program where and what our API key is. This will make the API_KEY available.
-from config import API_KEY
+from src.config import API_KEY
 
 
 def get_weather(
@@ -58,18 +58,21 @@ def get_weather(
         # API Key = your_api_key
         # Units = metric
 
-        # On receinving the request, the weather API server begins working. THer server asks itself if the API key is valid and if the city exists:
+        # On receinving the request, the weather API server begins working. The server asks itself if the API key is valid and if the city exists:
         # if yes -> it continues -> otherwise it returns an error.
         # now the weather API server goes to the weather database -> searches for Mumbai -> returns the weather of mumbai to the Weather API server.
         # Now the weather API server creates a json response -> this response is received by the requests library.
         # The requests library creates a RESPONSE OBJECT and stores it in response variable
 
         weather_data = response.json()
-        # The response object owns a method called json() -> it converst the JSON response received by the request lobrary into a python dictionary.
+        # The response object owns a method called json() -> it converts the JSON response received by the request library into a python dictionary.
         # This python dictionary is then stored in the variable weather_data.
 
+        # TEMPORARY CODE:
+        print(weather_data)
+
         # If user types an invalid city the following if block is executed:
-        if str(weather_data["cod"]) != 200:
+        if weather_data["cod"] != 200:
             print("City not found!")
             return None
         return weather_data
