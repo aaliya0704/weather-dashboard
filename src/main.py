@@ -13,17 +13,16 @@ def main():
 
     # print("City: ", weather_data["main"])  The result of this is:
     # {'temp': 29.05, 'feels_like': 35.56, 'temp_min': 29.05, 'temp_max': 29.05, 'pressure': 1006, 'humidity': 83, 'sea_level': 1006, 'grnd_level': 1005}
-
-    # With the help of this, we can specifically pick keys for City, Temperature, Humidity, and print them as:
-    print(f"Showing results for {weather_data['name']}")
-    print(f"Temperature: {weather_data['main']['temp']} Degree Celcius")
-    print(f"Humidity: {weather_data['main']['humidity']} %")
-    print(f"Weather: {weather_data['weather'][0]['description'].title()}")
+    if weather_data is not None:
+        # With the help of this, we can specifically pick keys for City, Temperature, Humidity, and print them as:
+        print(f"Showing results for {weather_data['name']}")
+        print(f"Temperature: {weather_data['main']['temp']} Degree Celcius")
+        print(f"Humidity: {weather_data['main']['humidity']} %")
+        print(f"Weather: {weather_data['weather'][0]['description'].title()}")
 
 
 if __name__ == "__main__":
     main()
 
-
-# PROGRAM FLOW SO FAR:
-# main.py calls -> get_weather() from weather.py -> weather.py creates the url [with the city and API_KEY] ->
+# cod = status code:
+# cod: 200 = everything is ok
