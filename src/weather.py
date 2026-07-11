@@ -68,9 +68,6 @@ def get_weather(
         # The response object owns a method called json() -> it converts the JSON response received by the request library into a python dictionary.
         # This python dictionary is then stored in the variable weather_data.
 
-        # TEMPORARY CODE:
-        print(weather_data)
-
         # If user types an invalid city the following if block is executed:
         if weather_data["cod"] != 200:
             print("City not found!")
