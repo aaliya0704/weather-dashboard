@@ -28,3 +28,6 @@ if __name__ == "__main__":
 
 # cod = status code:
 # cod: 200 = everything is ok
+
+
+# RUN YOUR FILE AS: python -m src.main -> IN THE TERMINAL
